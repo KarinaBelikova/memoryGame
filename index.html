@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<title>Memory Game!</title>
+	<script language="JavaScript" type="text/javascript"></script> 
+</head>
+<body>
+	<form id="my_form" class="sign-up" onsubmit="save_data()">
+	    <h1 class="sign-up-title">Sign up in seconds</h1>
+	    <input id="name" type="text" class="sign-up-input" placeholder="What's your username?" autofocus>
+	    <input type="submit" class="button" id="sign" value = "Sign me up!">
+  	</form>
+    <header id="header">
+	    <div>
+	      <h3>Moves</h3>
+	      <h4 id="moves">0</h4>
+	    </div>
+	    <div>
+	      <h3>Lives</h3>
+	      <h4 id="lives">18</h4>
+	    </div>	
+      <div>
+        <h1 id="item3">Find the Pair</h1>
+      </div>
+      <div id="item4">
+      	<h1 id="timer"><time>00:00:00</time></h1>
+		<button id="start">start</button>
+		<button id="stop">pause</button>
+	  </div>
+    </header>
+    <div id="menu" class="menu">
+    	<div>
+    		<button id="sign_menu" class="menu">sign up</button>
+    	</div>
+    	<div class="dropdown">
+    		<button class="menu">levels</button>
+    		<div class="dropdown-content">
+			    <a id="" onclick="level1()" href="#">6x6</a>
+			    <a id="" onclick="level2()"  href="#">8x8</a>
+			    <a id="" onclick="level3()"  href="#">10x10</a>
+			    <a id="" onclick="level4()"  href="#">12x12</a>
+		  	</div>
+    	</div>
+    	<div class="dropdown">
+		  <button class="menu">design</button>
+		  <div class="dropdown-content">
+		    <a id="yellow" onclick="yellow_color()" href="#">Yellow</a>
+		    <a id='green' onclick="green_color()"  href="#">Green</a>
+		    <a id='blue' onclick="blue_color()"  href="#">Blue</a>
+		  </div>
+		</div>
+    	<div class="dropdown">
+    	    <button class="menu">scores</button>
+    		<div class="dropdown-content">
+			    <a id="" onclick="" href="#">6x6</a>
+			    <a id="" onclick=""  href="#">8x8</a>
+			    <a id="" onclick=""  href="#">10x10</a>
+			    <a id="" onclick=""  href="#">12x12</a>
+		  	</div>
+    	</div>
+    </div>
+	<div id="memory_board">
+	
+	</div>
+	<script src="script/script.js"></script>
+	<script src="script/timer.js"></script>
+	<script src="script/levels.js"></script>
+	<script>newBoard();</script>
+
+</body>
+</html>
