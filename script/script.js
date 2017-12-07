@@ -74,8 +74,9 @@ function memoryFlipTile(tile, val) {
 				memory_tile_ids = [];
 			if(tiles_flipped == memory_array.length) {
 				stop.onclick();
-				alert("Congratulation! You're score is: " + h1.textContent+ "\nYou're moves is: " + moves.textContent);
-				input.time = h1.textContent;
+				alert("Congratulation! You're score is: " + time.textContent+ "\nYou're moves is: " + moves.textContent);
+				input.time = time.textContent;
+				localStorage.setItem(name, JSON.stringify(input));
 				save_data();	
 				memory_board.innerHTML = "";
 				newBoard();
@@ -142,6 +143,7 @@ sign_menu.onclick = function() {
 }
 sign.onclick = function() {
 	form.style.display = "none";
+
 }
 
 //localstorage
@@ -150,13 +152,32 @@ var input = {
 }
 function save_data() {
 	var name = document.getElementById("name").value ;
-  	localStorage.setItem(name, JSON.stringify(input)); 
+  	 
   	var storedValue = localStorage.getItem("name:"); 
+  	document.getElementById("user").textContent = "User: " + name;
  }
 
 
 
 //таблицы рекордов
+var table = document.getElementById("table");
+var table_name = document.getElementById("capture");
+function score1() {
+	capture.textContent = "Scores 6x6";
+	table.style.display="inline-table";
+}
 
+function score2() {
+	capture.textContent = "Scores 8x8";
+	table.style.display="inline-table";
+}
 
+function score3() {
+	capture.textContent = "Scores 10x10";
+	table.style.display="inline-table";
+}
 
+function score4() {
+	capture.textContent = "Scores 12x12";
+	table.style.display="inline-table";
+}

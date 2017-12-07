@@ -21,14 +21,15 @@
 	      <h4 id="lives">18</h4>
 	    </div>	
       <div>
-        <h1 id="item3">Find the Pair</h1>
+        <h1>Find the Pair</h1>
       </div>
-      <div id="item4">
+      <div>
       	<h1 id="timer"><time>00:00:00</time></h1>
 		<button id="start">start</button>
 		<button id="stop">pause</button>
 	  </div>
     </header>
+    <h2 id="user">User: </h2>
     <div id="menu" class="menu">
     	<div>
     		<button id="sign_menu" class="menu">sign up</button>
@@ -53,16 +54,29 @@
     	<div class="dropdown">
     	    <button class="menu">scores</button>
     		<div class="dropdown-content">
-			    <a id="" onclick="" href="#">6x6</a>
-			    <a id="" onclick=""  href="#">8x8</a>
-			    <a id="" onclick=""  href="#">10x10</a>
-			    <a id="" onclick=""  href="#">12x12</a>
+			    <a id="" onclick="score1()" href="#">6x6</a>
+			    <a id="" onclick="score2()"  href="#">8x8</a>
+			    <a id="" onclick="score3()"  href="#">10x10</a>
+			    <a id="" onclick="score4()"  href="#">12x12</a>
 		  	</div>
     	</div>
     </div>
 	<div id="memory_board">
 	
 	</div>
+	<table id="table"  border="1">
+	   <caption id="capture"></caption>
+	   <tr>
+	    <th>Date</th>
+	    <th>Name</th>
+	    <th>Score</th>
+	   </tr>
+	   <tr>
+	    <td>Ячейка 3</td>
+	    <td>Ячейка 4</td>
+	    <td >Ячейка 4</td>
+	  </tr>
+	</table>
 	<script src="script/script.js"></script>
 	<script src="script/timer.js"></script>
 	<script src="script/levels.js"></script>

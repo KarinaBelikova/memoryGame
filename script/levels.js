@@ -9,6 +9,7 @@ function level1() {
    lives.textContent = lives_item;
    flag = true;
    newBoard();
+  
 };
 
 function level2() {
@@ -27,6 +28,7 @@ function level2() {
 	}
 	memory_board.style.gridTemplateColumns="repeat(8, 58px)";
 	memory_board.style.gridTemplateRows="repeat(8, 58px)";
+	
 };
 
 function level3() {
@@ -47,6 +49,7 @@ function level3() {
 	}
 	memory_board.style.gridTemplateColumns="repeat(10, 46px)";
 	memory_board.style.gridTemplateRows="repeat(10, 46px)";
+	
 };
 
 function level4() {
@@ -73,4 +76,5 @@ function level4() {
 	}
 	memory_board.style.gridTemplateColumns="repeat(12, 38px)";
 	memory_board.style.gridTemplateRows="repeat(12, 38px)";
+	
 };
