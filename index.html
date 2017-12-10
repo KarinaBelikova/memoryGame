@@ -54,28 +54,35 @@
     	<div class="dropdown">
     	    <button class="menu">scores</button>
     		<div class="dropdown-content">
-			    <a id="" onclick="score1()" href="#">6x6</a>
-			    <a id="" onclick="score2()"  href="#">8x8</a>
-			    <a id="" onclick="score3()"  href="#">10x10</a>
-			    <a id="" onclick="score4()"  href="#">12x12</a>
+			    <a id="" onclick="score_table(1)" href="#">6x6</a>
+			    <a id="" onclick="score_table(2)"  href="#">8x8</a>
+			    <a id="" onclick="score_table(3)"  href="#">10x10</a>
+			    <a id="" onclick="score_table(4)"  href="#">12x12</a>
 		  	</div>
     	</div>
     </div>
 	<div id="memory_board">
 	
 	</div>
-	<table id="table"  >
-	   <caption id="capture"></caption>
-	   <tr>
-	    <th>Date</th>
-	    <th>Name</th>
-	    <th>Score</th>
-	   </tr>
-	   
+	<table id="table">
+	    <caption id="capture"></caption>
+	    <thead>
+		    <tr>
+			    <th>Date</th>
+			    <th>Name</th>
+			    <th>Score</th>
+		    </tr>	
+
+	    </thead>
+	<tbody id="table_child">	
+			
+	</tbody> 	 	
+			  
 	</table>
 	<script src="script/script.js"></script>
 	<script src="script/timer.js"></script>
 	<script src="script/levels.js"></script>
+	<script src="script/score.js"></script>
 	<script>newBoard();</script>
 
 </body>

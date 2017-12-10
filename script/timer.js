@@ -4,6 +4,7 @@ var time = document.getElementById('timer'),
     clear = document.getElementById('clear'),
     miliseconds = 0, seconds = 0, minutes = 0,
     t;
+var time_value = 0;
 
 function add() {
     miliseconds++;

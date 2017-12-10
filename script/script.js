@@ -72,28 +72,19 @@ function memoryFlipTile(tile, val) {
 				tiles_flipped += 2;
 				memory_values = [];
 				memory_tile_ids = [];
+				scores += 10;
 			if(tiles_flipped == memory_array.length) {
 				stop.onclick();
-				alert("Congratulation! You're score is: " + time.textContent+ "\nYou're moves is: " + moves.textContent);
+				score();
+				alert("Congratulation! \nYou're score is: "+ scores);
 				save_data();
-				switch(memory_array.length) {
-				  case 36: 
-				    score1();
-				    break;
-				  case 64:  
-				    score2();
-				    break;
-				    case 100:  
-				    score3();
-				    break;
-				    case 144:  
-				    score4();
-				    break;
-				}	
+				score_table();
 				memory_board.innerHTML = "";
 				newBoard();
 				clearTimer();
 				clearMovesLives();
+				time_value = 0;
+				scores = 0;
 				}
 			} else {
 				function flip2Back() {
@@ -117,6 +108,7 @@ function memoryFlipTile(tile, val) {
 
 // Цветовое оформление
 function yellow_color() {
+	table.style.background = "#ffe67f "
 	memory_board.style.background = "#ffe67f ";
 	var x = document.getElementsByTagName("button");
 	for (var i = 0; i < x.length; i++) {
@@ -127,6 +119,7 @@ function yellow_color() {
 }
 
 function green_color() {
+	table.style.background = "#30b339 "
 	memory_board.style.background = "#30b339";
 	var x = document.getElementsByTagName("button");
 	for (var i = 0; i < x.length; i++) {
@@ -136,6 +129,7 @@ function green_color() {
 }
 
 function blue_color() {
+	table.style.background = "#a9cce3 "
 	memory_board.style.background = "#a9cce3";
 	var x = document.getElementsByTagName("button");
 	for (var i = 0; i < x.length; i++) {
@@ -160,55 +154,3 @@ function save_name() {
 	document.getElementById("user").textContent = "User: " + name;
 }
 
-//localstorage
-var date = new Date();
-var date_value = date.getDate()+'.'+date.getMonth()+'.'+date.getFullYear();
-var local_value = {
-	date: date_value,
-    time: function(){time.textContent}
-
-}
-function save_data() {
-  	local_value.time = time.textContent;
-	localStorage.setItem(name, JSON.stringify(local_value));
- }
-
-
-
-//таблицы рекордов
-
-var table = document.getElementById("table");
-var table_name = document.getElementById("capture");
-
-function score1() {
-	capture.textContent = "Scores 6x6";
-	table.style.display="inline-table";
-	var massVal = [];
-	function parseOb (ob) {
-	    for(var key in ob)
-	    {
-	        massVal.push(ob[key]);
-	    }
-	}
-	for(var i=0; i<localStorage.length; i++) {
-		parseOb(JSON.parse(localStorage.getItem(localStorage.key(i))));
-		table.innerHTML += '<tr><td>'+ massVal[0] +'</td><td>'+ localStorage.key(i) +'</td><td>'+massVal[1]+'</td></tr>';
-		massVal = [];
-	}
-	
-}
-
-function score2() {
-	capture.textContent = "Scores 8x8";
-	table.style.display="inline-table";
-}
-
-function score3() {
-	capture.textContent = "Scores 10x10";
-	table.style.display="inline-table";
-}
-
-function score4() {
-	capture.textContent = "Scores 12x12";
-	table.style.display="inline-table";
-}

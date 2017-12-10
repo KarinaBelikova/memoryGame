@@ -73,6 +73,7 @@ function level4() {
     tiles[i].style.width = "38px";
     tiles[i].style.height = "38px";
      tiles[i].style.padding = "0px";
+     tiles[i].style.fontSize = "20px";
 	}
 	memory_board.style.gridTemplateColumns="repeat(12, 38px)";
 	memory_board.style.gridTemplateRows="repeat(12, 38px)";

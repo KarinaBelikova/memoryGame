@@ -1,6 +1,5 @@
 header, #capture, #table, .button, button, h1, h2, h3, h4, a {
   font-family: "Courier New", Courier, monospace;
-  
   text-transform: uppercase;
 
 }
@@ -128,7 +127,6 @@ button:hover, .button:hover {
 
 .sign-up {
 	margin-left: 500px;
- 	display:none;
   position: absolute;
   top: 30%;
   width: 280px;
@@ -187,32 +185,3 @@ input {
 #sign {
 	width:100%;
 }
-
-:-moz-placeholder {
-  color: #ccc;
-  font-weight: 300;
-}
-
-::-moz-placeholder {
-  color: #ccc;
-  opacity: 1;
-  font-weight: 300;
-}
-
-::-webkit-input-placeholder {
-  color: #ccc;
-  font-weight: 300;
-}
-
-:-ms-input-placeholder {
-  color: #ccc;
-  font-weight: 300;
-}
-
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-
-
