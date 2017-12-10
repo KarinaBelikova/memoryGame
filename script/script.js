@@ -8,8 +8,8 @@ var flag = true;
 
 var memory_board = document.getElementById('memory_board');
 
-var moves = document.getElementsByTagName('h4')[0];
-var lives = document.getElementsByTagName('h4')[1];
+var moves = document.getElementById('moves');
+var lives = document.getElementById('lives');
 var moves_item = 0;
 var lives_item = 18;
 var tiles = document.getElementById("memory_board").children;
@@ -76,9 +76,8 @@ function memoryFlipTile(tile, val) {
 			if(tiles_flipped == memory_array.length) {
 				stop.onclick();
 				score();
-				alert("Congratulation! \nYou're score is: "+ scores);
+				congratulation();
 				save_data();
-				score_table();
 				memory_board.innerHTML = "";
 				newBoard();
 				clearTimer();
@@ -104,7 +103,13 @@ function memoryFlipTile(tile, val) {
 };
 
 
-
+function congratulation() {
+	document.getElementById("congratulation").style.display = "block";
+	document.getElementById("your_score").textContent = "You're score is:" + scores;
+}
+function close_div() {
+	document.getElementById("congratulation").style.display = "none";
+}
 
 // Цветовое оформление
 function yellow_color() {
