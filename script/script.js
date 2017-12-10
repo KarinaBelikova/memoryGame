@@ -75,9 +75,21 @@ function memoryFlipTile(tile, val) {
 			if(tiles_flipped == memory_array.length) {
 				stop.onclick();
 				alert("Congratulation! You're score is: " + time.textContent+ "\nYou're moves is: " + moves.textContent);
-				input.time = time.textContent;
-				localStorage.setItem(name, JSON.stringify(input));
-				save_data();	
+				save_data();
+				switch(memory_array.length) {
+				  case 36: 
+				    score1();
+				    break;
+				  case 64:  
+				    score2();
+				    break;
+				    case 100:  
+				    score3();
+				    break;
+				    case 144:  
+				    score4();
+				    break;
+				}	
 				memory_board.innerHTML = "";
 				newBoard();
 				clearTimer();
@@ -94,7 +106,7 @@ function memoryFlipTile(tile, val) {
 					memory_values = [];
 					memory_tile_ids = [];
 				}
-			setTimeout(flip2Back, 700);
+			setTimeout(flip2Back, 300);
 			}
 		}
 	}
@@ -136,35 +148,54 @@ function blue_color() {
 //форма sign up
 var sign_menu = document.getElementById("sign_menu");
 var form = document.forms.my_form;
+var name;
 
 sign_menu.onclick = function() {
 	form.style.display = "block";
-	document.getElementById("name").value = "";
 }
-sign.onclick = function() {
-	form.style.display = "none";
 
+function save_name() {
+	name = document.getElementById("name").value ;
+	form.style.display = "none";
+	document.getElementById("user").textContent = "User: " + name;
 }
 
 //localstorage
-var input = {
-    time: ""
+var date = new Date();
+var date_value = date.getDate()+'.'+date.getMonth()+'.'+date.getFullYear();
+var local_value = {
+	date: date_value,
+    time: function(){time.textContent}
+
 }
 function save_data() {
-	var name = document.getElementById("name").value ;
-  	 
-  	var storedValue = localStorage.getItem("name:"); 
-  	document.getElementById("user").textContent = "User: " + name;
+  	local_value.time = time.textContent;
+	localStorage.setItem(name, JSON.stringify(local_value));
  }
 
 
 
 //таблицы рекордов
+
 var table = document.getElementById("table");
 var table_name = document.getElementById("capture");
+
 function score1() {
 	capture.textContent = "Scores 6x6";
 	table.style.display="inline-table";
+	var massVal = [];
+	function parseOb (ob) {
+	    for(var key in ob)
+	    {
+	        massVal.push(ob[key]);
+	    }
+	}
+	for(var i=0; i<localStorage.length; i++) {
+		parseOb(JSON.parse(localStorage.getItem(localStorage.key(i))));
+		table.innerHTML += '<tr><td>'+ massVal[0] +'</td><td>'+ localStorage.key(i) +'</td><td>'+massVal[1]+'</td></tr>';
+		massVal = [];
+	}
+	
 }
 
 function score2() {

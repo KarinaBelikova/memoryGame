@@ -50,6 +50,7 @@ header {
   position: absolute;
   background: #a9cce3;
   display: none;
+  border: 4px solid #2980b9;
 }
 
 body{
